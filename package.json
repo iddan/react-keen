@@ -26,12 +26,6 @@
     "lodash": "^4.17.4",
     "react": "^16.0.0"
   },
-  "babel": {
-    "presets": [
-      "es2015",
-      "react"
-    ]
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
