@@ -1,6 +1,6 @@
 {
   "name": "react-keen",
-  "version": "1.0.5",
+  "version": "0.9.0",
   "description": "React Component for Keen.io Charts",
   "main": "./dist/index.js",
   "scripts": {
