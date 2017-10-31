@@ -1,3 +1,4 @@
-node_modules
-example/build
+src/
+examples/
+assets/
 npm-debug.log
