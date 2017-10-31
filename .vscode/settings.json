@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+    "node_modules": "explorerExcludedFiles",
+    "dist": "explorerExcludedFiles",
+    "example/buildi": "explorerExcludedFiles",
+    "npm-debug.log": "explorerExcludedFiles"
+  }
+}
