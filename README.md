@@ -5,7 +5,7 @@
 <p>A React component for <a href="https://github.com/keen/keen-js">Keen IO </a></p>
 </div>
 
-## Installation
+### Installation
 
 ```bash
 npm install react-keen
@@ -13,7 +13,7 @@ npm install react-keen
 yarn add react-keen
 ```
 
-## Usage
+### Usage
 
 Use Query and Chart components to create a chart of data from Keen. Query expects a client prop and parameters used by the [Keen.Query of keen-analysis.js](https://github.com/keen/keen-analysis.js#keenquery) and Chart expects a data prop of the response from the query (a Keen.Dataset object) or a raw object and values passed to [Keen.Dataviz methods](https://github.com/keen/keen-dataviz.js/tree/master/docs). Check the `examples/` directory for some examples
 
@@ -35,7 +35,7 @@ const client = new Keen({
 )}</Query>
 ```
 
-## Development
+### Development
 
  - Clone the repo `git clone git@github.com:iddan/react-keen.git`
  - Install dependencies `yarn install`
@@ -43,6 +43,10 @@ const client = new Keen({
  - Install examples dependencies `yarn install`
  - Run examples development server `yarn start`
 
-## License
+### Prior Art
+
+ - [react-keenio](https://github.com/matthiaskern/react-keenio)
+
+### License
 
 MIT License
