@@ -30,14 +30,9 @@ const client = new Keen({
     client={client}
     event_collection='pageviews'
     timeframe='this_14_days'
->{
-    data => (
-        <Chart
-            type="area"
-            data={data}
-        >
-    )
-}</Query>
+>{data => (
+    <Chart type="area" data={data} />
+)}</Query>
 ```
 
 ## Development
