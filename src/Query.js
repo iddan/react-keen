@@ -9,8 +9,8 @@ export default class Query extends Component {
   }
 
   run(props) {
-    const { client, children, type, ...rest } = props
-    client.run(new KeenQuery(type, rest)).then(data => this.setState({ data }))
+    const { client, children, type, id, ...rest } = props
+    client.run(new KeenQuery(type, type === 'saved' ? id : rest)).then(data => this.setState({ data }))
   }
 
   componentWillMount() {
