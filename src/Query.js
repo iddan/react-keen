@@ -12,7 +12,7 @@ export default class Query extends Component {
     const { client, children, type, id, ...rest } = props
     switch (type) {
       case 'saved': {
-        return client.query('saved', id)
+        return client.query('saved', id).then(data => this.setState({ data }))
       }
       default: {
         return client.run(new KeenQuery(type, rest)).then(data => this.setState({ data }))
