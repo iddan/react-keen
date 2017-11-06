@@ -2,7 +2,7 @@
     <img height="140" src="assets/keen-io.svg" alt="Keen Logo" align="center" />
     <img width="167" src="assets/react.svg" alt="React Logo" align="center" />
 <h1>React Keen</h1>
-<p>A React component for <a href="https://github.com/keen/keen-js">Keen IO </a></p>
+<p>React components for <a href="https://github.com/keen/keen-js">Keen IO </a></p>
 </div>
 
 ### Installation
