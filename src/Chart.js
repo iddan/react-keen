@@ -5,10 +5,12 @@ import Dataviz from 'keen-dataviz'
 export default class Chart extends Component {
 
   handleRef = el => {
-    this.dataviz = new Dataviz()
-      .el(el)
-      .prepare()
-    this.sync()
+    if (el) {
+      this.dataviz = new Dataviz()
+        .el(el)
+        .prepare()
+      this.sync()
+    }
   }
 
   componentDidUpdate(prevProps) {

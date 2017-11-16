@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { getChangedProps } from 'util'
+import { getChangedProps } from './util'
 import { Query as KeenQuery } from 'keen-analysis'
 
 export default class Query extends Component {
