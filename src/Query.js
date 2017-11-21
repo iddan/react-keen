@@ -10,20 +10,22 @@ export default class Query extends Component {
   }
 
   run(props) {
-    const { client, children, type, id, ...rest } = props
-    this.setState({ data: null, error: null })
+    const { client, children, type, id, ...rest } = props;
+    this.setState({ data: null, error: null });
     switch (type) {
       case 'saved': {
         client
           .query('saved', id)
           .then(data => this.setState({ data }))
-          .catch((error) => this.setState({ error }))
+          .catch((error) => this.setState({ error }));
+        break;
       }
       default: {
         client
           .run(new KeenQuery(type, rest))
           .then(data => this.setState({ data }))
-          .catch((error) => this.setState({ error }))
+          .catch((error) => this.setState({ error }));
+        break;
       }
     }
   }
@@ -33,18 +35,17 @@ export default class Query extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const changedProps = getChangedProps(nextProps, this.props)
+    const changedProps = getChangedProps(nextProps, this.props);
     if (changedProps.length) {
-     this.run(nextProps) 
+     this.run(nextProps);
     }
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextState !== this.state
+    return nextState !== this.state;
   }
 
   render() {
-    console.log(this.state)
-    return this.props.children(this.state)
+    return this.props.children(this.state);
   }
 }
