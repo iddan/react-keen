@@ -28,8 +28,8 @@ class App extends Component {
           <h1 className="App-title">React Keen Examples</h1>
         </header>
         <Query client={client} type="count" event_collection="user_action" timeframe={CHART_1_TIMEFRAME} interval="weekly">{
-          data => (
-            <Chart type="area" data={data} height={300}/>
+          ({ error, data }) => (
+            <Chart {...error} type="area" data={data} height={300}/>
           )
         }</Query>
       </div>

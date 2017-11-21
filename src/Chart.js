@@ -6,28 +6,27 @@ export default class Chart extends Component {
 
   handleRef = el => {
     if (el) {
-      this.dataviz = new Dataviz()
-        .el(el)
-        .prepare()
+      this.dataviz = new Dataviz().el(el)
       this.sync()
     }
   }
 
-  componentDidUpdate(prevProps) {
-    this.sync(prevProps)
+  componentDidUpdate() {
+    this.sync()
   }
 
   componentWillUnmount() {
     this.dataviz.destroy()
   }
 
-  sync(prevProps) {
-    const changedProps = prevProps ? getChangedProps(this.props, prevProps) : Object.keys(this.props)
-    for (const prop of changedProps) {
-      this.dataviz[prop](this.props[prop])
+  sync() {
+    const { data, message } = this.props
+    this.dataviz.attributes(this.props)
+    if (message) {
+      this.dataviz.message(message)
     }
-    if (this.props.data) {
-      this.dataviz.render()
+    else if (data) {
+      this.dataviz.data(data).render()
     }
     else {
       this.dataviz.prepare()

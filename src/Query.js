@@ -5,17 +5,25 @@ import { Query as KeenQuery } from 'keen-analysis'
 export default class Query extends Component {
   
   state = {
-    data: null
+    data: null,
+    error: null,
   }
 
   run(props) {
     const { client, children, type, id, ...rest } = props
+    this.setState({ data: null, error: null })
     switch (type) {
       case 'saved': {
-        return client.query('saved', id).then(data => this.setState({ data }))
+        client
+          .query('saved', id)
+          .then(data => this.setState({ data }))
+          .catch((error) => this.setState({ error }))
       }
       default: {
-        return client.run(new KeenQuery(type, rest)).then(data => this.setState({ data }))
+        client
+          .run(new KeenQuery(type, rest))
+          .then(data => this.setState({ data }))
+          .catch((error) => this.setState({ error }))
       }
     }
   }
@@ -32,13 +40,11 @@ export default class Query extends Component {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    return nextState.data !== this.state.data
+    return nextState !== this.state
   }
 
   render() {
-    if (!this.state.data) {
-      return null
-    }
-    return this.props.children(this.state.data)
+    console.log(this.state)
+    return this.props.children(this.state)
   }
 }
